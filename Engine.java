@@ -2,21 +2,20 @@ import javax.net.ssl.TrustManager;
 import javax.swing.plaf.TreeUI;
 
 public class Engine {
-    //private FuelType f = FuelType.ELECTRIC;
-    private double maxfuel;
+    private FuelType fuelType;
+    private static double maxfuel = 200.0;
     private double currentfuel;
 
-    public Engine(String FuelType, double maxfuel, double currentfuel) {
-        //this.FuelType = FuelType;
-        this.maxfuel = maxfuel;
+    public Engine(FuelType fuelType, double currentfuel) {
+        this.fuelType = fuelType;
         this.currentfuel = currentfuel;
     }
-    public String getFuelType() {
-        return this.FuelType;
+    public FuelType getfuelType() {
+        return this.fuelType;
     }
 
     public double getmaxfuel() {
-        return this.maxfuel;
+        return maxfuel;
     }
 
     public double getcurrentfuel() {
@@ -40,5 +39,6 @@ public class Engine {
             System.out.println("Choo choo!");
         }
         System.out.println("Out of fuel.");
+
     }
 }
