@@ -6,22 +6,22 @@ public class Car {
     private int capacity;
     private ArrayList<String> passengers = new ArrayList<String>();
 
-    private Car(int capacity) {
+    public Car(int capacity) {
         this.capacity = capacity;
         passengers.ensureCapacity(this.capacity);   
     }
 
-    private int getCapacity() {
+    public int getCapacity() {
         return this.capacity;
     }
 
-    private int seatsRemaining() {
+    public int seatsRemaining() {
         int arraysize = passengers.size();
         int remainingseats = this.capacity - arraysize;
         return remainingseats;
     }
 
-    private boolean addPassenger(String Passenger) {
+    public boolean addPassenger(String Passenger) {
         if (seatsRemaining() > 0) {
             passengers.add(Passenger);
             return true;
@@ -31,7 +31,7 @@ public class Car {
         }
     }
     
-    private boolean removePassenger(String Passenger) {
+    public boolean removePassenger(String Passenger) {
         if (passengers.contains(Passenger)) {
             passengers.remove(Passenger);
             return true;
@@ -41,7 +41,7 @@ public class Car {
         }
     }
     
-    private void printManifest() {
+    public void printManifest() {
         System.out.println(passengers);
     }
     

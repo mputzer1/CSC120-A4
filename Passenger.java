@@ -6,7 +6,16 @@ public class Passenger {
         this.name = name;
     }
 
-    private void boardCar(Car Car) {
-        Car.addPassenger(this.name);
+    public void boardCar(Car Car) {
+        if (Car.addPassenger(this.name)) {
+            Car.addPassenger(this.name);
+            }
     }
-}
+     
+    public void getOffCar(Car Car) {
+        if (Car.removePassenger(this.name)) {
+            Car.removePassenger(this.name);
+        }
+    }
+
+    }
