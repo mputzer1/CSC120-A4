@@ -5,6 +5,7 @@ public class Engine {
     private FuelType fuelType;
     private static double maxfuel = 200.0;
     private double currentfuel;
+    //Should I start currentfuel at 0 and increment? then user inputs maxfuel?
 
     public Engine(FuelType fuelType, double currentfuel) {
         this.fuelType = fuelType;
