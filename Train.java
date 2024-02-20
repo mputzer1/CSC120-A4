@@ -5,7 +5,7 @@ public class Train {
     private double maxfuel;
     private int ncars;
     private int capacity;
-    private ArrayList<String> cars = new ArrayList<String>();
+    private ArrayList<Car> cars = new ArrayList<Car>();
 
     public Train(FuelType fuelType, double maxfuel, int ncars, int capacity) {
         this.fuelType = fuelType;
