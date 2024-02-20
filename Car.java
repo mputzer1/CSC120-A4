@@ -46,9 +46,9 @@ public class Car {
     public void printManifest() {
         System.out.println(passengers);
     }
-    
-    
+
     }
+    
 
 
 
