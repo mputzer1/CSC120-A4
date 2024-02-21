@@ -3,15 +3,14 @@ import javax.swing.plaf.TreeUI;
 
 public class Engine {
     private FuelType fuelType;
-    private double maxfuel;
+    private static double maxfuel = 200.0;
     private double currentfuel;
-    //Should I start currentfuel at 0 and increment? then user inputs maxfuel?
-
-    public Engine(FuelType fuelType, double currentfuel, double maxfuel) {
+    
+    public Engine(FuelType fuelType, double currentfuel) {
         this.fuelType = fuelType;
         this.currentfuel = currentfuel;
-        this.maxfuel = maxfuel;
     }
+
     public FuelType getfuelType() {
         return this.fuelType;
     }
@@ -31,8 +30,6 @@ public class Engine {
     public boolean go() {
         this.currentfuel--;
         System.out.println("Remaining Fuel:" + this.currentfuel);
-        return this.currentfuel > 0;
-        
+        return this.currentfuel > 0; 
     }
-
     }

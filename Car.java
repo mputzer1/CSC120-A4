@@ -4,28 +4,28 @@ import javax.swing.plaf.TreeUI;
 
 public class Car {
     private Passenger Passenger;
-    private int capacity;
+    private static int capacity = 500;
     private ArrayList<Passenger> passengers = new ArrayList<Passenger>();
 
-    public Car(int capacity, Passenger Passenger) {
-        this.capacity = capacity;
+    public Car(Passenger Passenger, ArrayList<Passenger> passengers) {
         this.Passenger = Passenger;
-        passengers.ensureCapacity(this.capacity);   
+        this.passengers = passengers;
+        this.passengers.ensureCapacity(capacity);   
     }
 
-    public int getCapacity() {
-        return this.capacity;
+    public static int getCapacity() {
+        return capacity;
     }
 
     public int seatsRemaining() {
         int arraysize = passengers.size();
-        int remainingseats = this.capacity - arraysize;
+        int remainingseats = capacity - arraysize;
         return remainingseats;
     }
 
     public boolean addPassenger(String name) { 
         if (seatsRemaining() > 0) {
-            passengers.add(this.Passenger); 
+            this.passengers.add(this.Passenger); 
             return true;
         }
         else {
@@ -34,8 +34,8 @@ public class Car {
     }
     
     public boolean removePassenger(String name) {
-        if (passengers.contains(this.Passenger)) {
-            passengers.remove(this.Passenger);
+        if (this.passengers.contains(this.Passenger)) {
+            this.passengers.remove(this.Passenger);
             return true;
         }
         else {
