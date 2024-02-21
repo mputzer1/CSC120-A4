@@ -3,12 +3,13 @@ import javax.swing.plaf.TreeUI;
 
 public class Engine {
     private FuelType fuelType;
-    private static double maxfuel = 200.0;
+    private double maxfuel;
     private double currentfuel;
     
-    public Engine(FuelType fuelType, double currentfuel) {
+    public Engine(FuelType fuelType, double currentfuel, double maxfuel) {
         this.fuelType = fuelType;
         this.currentfuel = currentfuel;
+        this.maxfuel = maxfuel;
     }
 
     public FuelType getfuelType() {
@@ -16,15 +17,15 @@ public class Engine {
     }
 
     public double getmaxfuel() {
-        return maxfuel;
+        return this.maxfuel;
     }
 
     public double getcurrentfuel() {
         return this.currentfuel;
     }
 
-    public void refuel(double maxfuel) {
-        this.currentfuel = maxfuel;
+    public void refuel() {
+        this.currentfuel = this.maxfuel;
     }
 
     public boolean go() {

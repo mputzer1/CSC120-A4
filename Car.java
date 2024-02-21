@@ -1,31 +1,31 @@
 import java.util.ArrayList;
+
 import javax.net.ssl.TrustManager;
 import javax.swing.plaf.TreeUI;
 
 public class Car {
     private Passenger Passenger;
-    private static int capacity = 500;
-    private ArrayList<Passenger> passengers = new ArrayList<Passenger>();
+    private int capacity;
+    private ArrayList<Passenger> passengers = new ArrayList<Passenger>(capacity);
 
-    public Car(Passenger Passenger, ArrayList<Passenger> passengers) {
+    public Car(Passenger Passenger, int capacity) {
         this.Passenger = Passenger;
-        this.passengers = passengers;
-        this.passengers.ensureCapacity(capacity);   
+        this.capacity = capacity;  
     }
 
-    public static int getCapacity() {
-        return capacity;
+    public int getCapacity() {
+        return this.capacity;
     }
 
     public int seatsRemaining() {
         int arraysize = passengers.size();
-        int remainingseats = capacity - arraysize;
+        int remainingseats = this.capacity - arraysize;
         return remainingseats;
     }
 
     public boolean addPassenger(String name) { 
         if (seatsRemaining() > 0) {
-            this.passengers.add(this.Passenger); 
+            passengers.add(name); 
             return true;
         }
         else {
@@ -34,8 +34,8 @@ public class Car {
     }
     
     public boolean removePassenger(String name) {
-        if (this.passengers.contains(this.Passenger)) {
-            this.passengers.remove(this.Passenger);
+        if (passengers.contains(name)) {
+            passengers.remove(name);
             return true;
         }
         else {
@@ -44,10 +44,12 @@ public class Car {
     }
     
     public void printManifest() {
-        System.out.println(passengers);
+        for(int i=0; i < passengers.size(); i++) {
+            System.out.println(passengers.get(i));
+        }
     }
-
-    }
+    
+}
     
 
 
