@@ -8,7 +8,7 @@ import javax.swing.plaf.TreeUI;
  */
 public class Car {
     private int capacity;
-    Passenger passenger;
+    private Passenger passenger;
     private ArrayList<Passenger> passengers = new ArrayList<Passenger>(capacity);
 
     public Car(int capacity, Passenger passenger) {

@@ -2,3 +2,7 @@ Use this file to record your reflection on this assignment.
 
 - What are your initial impressions of how `Encapsulation` affects your programming?
 - What worked, what didn't, what advice would you give someone taking this course in the future?
+
+I think encapsulation helps me keep attributes of classes secure, however,I'm still kinda confused on how to access attributes from different classes if they are private. Communicating between classes is still confusing to me. I spoke with a TA in office hours to get some help with the train class, for example, but still was a little confused. I tried to do my own research since I wasn't able to go to TA hours or professor office hours and still felt a little lost. I will be much less busy next week, however, and will make an effort to go to both TA hours and professor office hours for extra help.
+
+In terms of what worked, I was able to build an engine class that functioned fairly well. My biggest struggle was communication between the passenger and car class when it comes to adding passengers to a car. I'm also not super clear on how to create multiple cars and passengers and store them all in an array list in the train class. My advice for future students would probably be to just take more breaks. I ended up spending more time than I should have on code that didn't work because I wanted to successfully problem solve when I should have just stopped right away and talked to someone who could help me.
