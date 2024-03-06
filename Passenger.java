@@ -22,9 +22,9 @@ public class Passenger {
      * Adds passenger to the car
      * @param Car
      */
-    public void boardCar(Car Car) {
-        if (Car.addPassenger(this.name)) {
-            Car.addPassenger(this.name);
+    public void boardCar(Car c) {
+        if (c.addPassenger(this)) {
+            c.addPassenger(this);
             }
     }
     
@@ -32,9 +32,9 @@ public class Passenger {
      * removes passenger from car
      * @param Car
      */
-    public void getOffCar(Car Car) {
-        if (Car.removePassenger(this.name)) {
-            Car.removePassenger(this.name);
+    public void getOffCar(Car c) {
+        if (c.removePassenger(this)) {
+            c.removePassenger(this);
         }
     }
 

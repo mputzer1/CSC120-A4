@@ -6,19 +6,17 @@ import java.util.ArrayList;
 public class Train {
     private int ncars;
     private Engine engine;
-    private ArrayList<Car> cars = new ArrayList<Car>();
+    private ArrayList<Car> cars;
     private FuelType fuelType;
     private double fuelcapacity;
     private int passengercapacity;
 
-    public Train(Engine engine, FuelType fuelType, double fuelcapacity, int ncars, ArrayList<Car> cars, int passengercapacity) {
+    public Train(FuelType fuelType, double fuelcapacity, int ncars, int passengercapacity) {
         this.fuelType = fuelType;
-        this.engine = engine;
         this.passengercapacity = passengercapacity;
         this.fuelcapacity = fuelcapacity;
         this.ncars = ncars;
-        this.cars = cars;
-        this.cars.ensureCapacity(this.ncars);
+        this.cars = new ArrayList<Car>(ncars);
 
     }
 
@@ -35,7 +33,7 @@ public class Train {
      * @return ith car.
      */
     //public Car getCar(int i) {
-        //String icar = cars.get(i);
+        //String icar = this.cars.get(i);
     //}
 
     /**

@@ -9,11 +9,12 @@ import javax.swing.plaf.TreeUI;
 public class Car {
     private int capacity;
     private Passenger passenger;
-    private ArrayList<Passenger> passengers = new ArrayList<Passenger>(capacity);
+    private ArrayList<Passenger> passengers;
 
     public Car(int capacity, Passenger passenger) {
         this.capacity = capacity;  
         this.passenger = passenger;
+        this.passengers = new ArrayList<Passenger>(capacity);
     }
 
     /**
@@ -39,9 +40,9 @@ public class Car {
      * @param name
      * @return boolean
      */
-    public boolean addPassenger(String name) { 
+    public boolean addPassenger(Passenger p) { 
         if (seatsRemaining() > 0) {
-            passengers.add(this.passenger); 
+            this.passengers.add(p); 
             return true;
         }
         else {
@@ -54,9 +55,9 @@ public class Car {
      * @param name
      * @return boolean
      */
-    public boolean removePassenger(String name) {
-        if (passengers.contains(this.passenger)) {
-            passengers.remove(this.passenger);
+    public boolean removePassenger(Passenger p) {
+        if (this.passengers.contains(p)) {
+            this.passengers.remove(p);
             return true;
         }
         else {
@@ -68,9 +69,9 @@ public class Car {
      * Prints all passengers in the car if the car has passengers. If not, it prints that the car is empty.
      */
     public void printManifest() {
-        if (passengers.size() > 0) {
-            for(int i=0; i < passengers.size(); i++) {
-                System.out.println(passengers.get(i));
+        if (this.passengers.size() > 0) {
+            for(int i=0; i < this.passengers.size(); i++) {
+                System.out.println(this.passengers.get(i));
             }
         }
         else {
@@ -78,6 +79,10 @@ public class Car {
         }
     }
 
+    public static void main(String[] args) {
+        Car car = new Car(12 , new Passenger("John"));
+
+    }
 }
     
 
