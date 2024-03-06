@@ -68,23 +68,14 @@ public class Car {
      */
     public void printManifest() {
         if (this.passengers.size() > 0) {
+            System.out.println("\nPASSENGERS ONBOARD:");
             for(int i=0; i < this.passengers.size(); i++) {
-                System.out.println(this.passengers.get(i));
+                System.out.println(this.passengers.get(i).getname());
             }
         }
         else {
             System.out.println("This car is EMPTY.");
         }
-    }
-
-    public static void main(String[] args) {
-        Car car = new Car(12);
-        System.out.println(car.seatsRemaining());
-        car.printManifest();
-        Passenger p = new Passenger("joe");
-        car.addPassenger(p);
-        System.out.println(car.seatsRemaining());
-        car.printManifest();
     }
 }
     

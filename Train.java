@@ -71,21 +71,18 @@ public class Train {
      * @param args
      */
     public static void main(String[] args) {
-        Passenger John = new Passenger("John");
-        Car Car1 = new Car(60);
-        John.boardCar(Car1);
-        Car1.printManifest();
-        System.out.println("Seats Remaining:" + Car1.seatsRemaining());
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 200.0); {
-        while (myEngine.go()) {
-            System.out.println("Choo choo!");
-        }
-            System.out.println("Out of fuel.");
-            myEngine.refuel();
-        
-    }
+        Car car1 = new Car(12);
+        System.out.println("\nSeats Remaining:" + car1.seatsRemaining());
+        car1.printManifest();
+        Passenger p = new Passenger("joe");
+        car1.addPassenger(p);
+        Passenger s = new Passenger("mariah");
+        car1.addPassenger(s);
+        System.out.println("\nSeats Remaining:" + car1.seatsRemaining());
+        car1.printManifest();  
     }
 }
+
 
 
  
