@@ -16,7 +16,7 @@ public class Train {
         this.passengercapacity = passengercapacity;
         this.fuelcapacity = fuelcapacity;
         this.ncars = ncars;
-        this.cars = new ArrayList<Car>(ncars);
+        this.cars = new ArrayList<Car>();
 
     }
 
@@ -72,7 +72,7 @@ public class Train {
      */
     public static void main(String[] args) {
         Passenger John = new Passenger("John");
-        Car Car1 = new Car(60, John);
+        Car Car1 = new Car(60);
         John.boardCar(Car1);
         Car1.printManifest();
         System.out.println("Seats Remaining:" + Car1.seatsRemaining());

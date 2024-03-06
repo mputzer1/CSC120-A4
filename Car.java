@@ -8,13 +8,11 @@ import javax.swing.plaf.TreeUI;
  */
 public class Car {
     private int capacity;
-    private Passenger passenger;
     private ArrayList<Passenger> passengers;
 
-    public Car(int capacity, Passenger passenger) {
+    public Car(int capacity) {
         this.capacity = capacity;  
-        this.passenger = passenger;
-        this.passengers = new ArrayList<Passenger>(capacity);
+        this.passengers = new ArrayList<Passenger>();
     }
 
     /**
@@ -75,13 +73,18 @@ public class Car {
             }
         }
         else {
-            System.out.println("This car is empty");
+            System.out.println("This car is EMPTY.");
         }
     }
 
     public static void main(String[] args) {
-        Car car = new Car(12 , new Passenger("John"));
-
+        Car car = new Car(12);
+        System.out.println(car.seatsRemaining());
+        car.printManifest();
+        Passenger p = new Passenger("joe");
+        car.addPassenger(p);
+        System.out.println(car.seatsRemaining());
+        car.printManifest();
     }
 }
     
