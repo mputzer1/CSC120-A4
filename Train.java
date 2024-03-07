@@ -74,10 +74,12 @@ public class Train {
         Car car1 = new Car(12);
         System.out.println("\nSeats Remaining:" + car1.seatsRemaining());
         car1.printManifest();
-        Passenger p = new Passenger("joe");
-        car1.addPassenger(p);
-        Passenger s = new Passenger("mariah");
-        car1.addPassenger(s);
+        Passenger p = new Passenger("Joe");
+        p.boardCar(car1);
+        //car1.addPassenger(p);
+        Passenger s = new Passenger("Mariah");
+        s.boardCar(car1);
+        //car1.addPassenger(s);
         System.out.println("\nSeats Remaining:" + car1.seatsRemaining());
         car1.printManifest();  
     }

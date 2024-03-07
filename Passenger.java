@@ -22,20 +22,25 @@ public class Passenger {
      * Adds passenger to the car
      * @param Car
      */
-    public void boardCar(Car c) {
+    public boolean boardCar(Car c) {
         if (c.addPassenger(this)) {
-            c.addPassenger(this);
-            }
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
     /**
      * removes passenger from car
      * @param Car
      */
-    public void getOffCar(Car c) {
+    public boolean getOffCar(Car c) {
         if (c.removePassenger(this)) {
-            c.removePassenger(this);
+            return true;
+        }
+        else {
+            return false;
         }
     }
-
     }
