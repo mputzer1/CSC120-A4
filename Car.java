@@ -28,7 +28,7 @@ public class Car {
      * @return remaining seats in car
      */
     public int seatsRemaining() {
-        int arraysize = passengers.size();
+        int arraysize = this.passengers.size();
         int remainingseats = this.capacity - arraysize;
         return remainingseats;
     }

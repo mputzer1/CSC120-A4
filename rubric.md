@@ -22,15 +22,15 @@ Yes 1 pt: The `Engine` class has `refuel()` and `go()` methods that correctly mo
 
 ### Level 2 (3 pts)
 
-Part 1 pt: The `Car` class contains appropriately-encapsulated attributes to store information about its capacity and current `Passenger`s
+Yes 1 pt: The `Car` class contains appropriately-encapsulated attributes to store information about its capacity and current `Passenger`s
 
-Part 1 pt: The `Car` class has functional `addPassenger(...)` and `removePassenger(...)` methods
+Yes 1 pt: The `Car` class has functional `addPassenger(...)` and `removePassenger(...)` methods
 
-Part 1 pt: The `Car` class has a `printManifest()` method that prints a nicely-formatted roster of all `Passenger`s currently aboard the car
+Yes 1 pt: The `Car` class has a `printManifest()` method that prints a nicely-formatted roster of all `Passenger`s currently aboard the car
 
 ### Level 3 (3 pts)
 
-Part 1 pt: The `Passenger` class uses appropriate methods from the `Car` class to implement its `boardCar(...)` and `getOffCar(...)` methods
+Yes 1 pt: The `Passenger` class uses appropriate methods from the `Car` class to implement its `boardCar(...)` and `getOffCar(...)` methods
 
 Part 1 pt: The `Train` class has all expected attributes / relationships with the other classes
 

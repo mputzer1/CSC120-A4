@@ -12,11 +12,10 @@ public class Train {
     private int passengercapacity;
 
     public Train(FuelType fuelType, double fuelcapacity, int ncars, int passengercapacity) {
-        this.fuelType = fuelType;
+        this.engine = new Engine(this.fuelType, 60, this.fuelcapacity);
         this.passengercapacity = passengercapacity;
-        this.fuelcapacity = fuelcapacity;
-        this.ncars = ncars;
         this.cars = new ArrayList<Car>();
+        this.ncars = this.cars.size();
 
     }
 
@@ -32,38 +31,49 @@ public class Train {
      * Intended to return the ith car.
      * @return ith car.
      */
-    //public Car getCar(int i) {
-        //String icar = this.cars.get(i);
-    //}
-
-    /**
-     * Gets the max capacity across all cars for passengers
-     * @return the max capacity across all cars for passengers
-     */
-    public int getMaxCapacity() {
-        return this.passengercapacity * this.ncars;
+    public Car getCar(int i) {
+        Car icar = this.cars.get(i);
+        return icar;
     }
 
     /**
-     * Intended to return the number of seats remaining across all cars
+     * Gets the max capacity across all cars for passengers
+     * @return the passengercapcity across all cars for passengers
      */
-    //public int seatsRemaining() {
-        //Car.seatsRemaining();
-    //}
+    public int getMaxCapacity() {
+        for(int i=0; i < this.ncars; i++) {
+            this.passengercapacity += this.cars.get(i).getCapacity();
+        }
+        return this.passengercapacity;
+    }
+
+    /**
+     * Returns the number of seats remaining across all cars
+     * @return the number of remaining seats across all cars
+     */
+    public int seatsRemaining() {
+        int seatsRemaining = this.passengercapacity;
+        for(int i=0; i < this.ncars; i++) {
+            seatsRemaining -= this.cars.get(i).seatsRemaining();
+        }
+        int allremainingseats = this.passengercapacity-seatsRemaining;
+        return allremainingseats;
+    }
+    
 
     /**
      * Prints all passengers oboard if the train has passengers. If not, it prints that the train is empty.
      */
-    //public void printManifest() {
-        //if (passengers.size() > 0) {
-            //for(int i=0; i < passengers.size(); i++) {
-                //System.out.println(passengers.get(i));
-            //}
-        //}
-        //else {
-            //System.out.println("This train is empty");
-       // }
-   // }
+    public void printManifest() {
+        if (seatsRemaining() != this.passengercapacity) {
+            for(int i=0; i < this.ncars; i++) {
+                cars.get(i).printManifest();
+            }
+        }
+        else {
+            System.out.println("This train is empty");
+        }
+    }
 
 
     /**
@@ -76,12 +86,10 @@ public class Train {
         car1.printManifest();
         Passenger p = new Passenger("Joe");
         p.boardCar(car1);
-        //car1.addPassenger(p);
         Passenger s = new Passenger("Mariah");
         s.boardCar(car1);
-        //car1.addPassenger(s);
         System.out.println("\nSeats Remaining:" + car1.seatsRemaining());
-        car1.printManifest();  
+        car1.printManifest(); 
     }
 }
 
